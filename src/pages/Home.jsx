@@ -5,7 +5,11 @@ import HookUseState from '../hooks/HookUseState'
 import HookUseReducer from "../hooks/HookUseReducer";
 import HookUseEffect from '../hooks/HookUseEffect';
 
+import { useContext } from 'react';
+import { SomeContext } from '../hooks/HookUseContenxt';
+
 const Home = () => {
+  const {contextValue} = useContext(SomeContext);
   return (
     <div>
         <HookUseState />
@@ -15,6 +19,9 @@ const Home = () => {
         <hr />
         <br /><br />
         <HookUseEffect />
+        <h2>UseContentx</h2>
+        <p>Valor {contextValue}</p>
+        <hr />
     </div>
   )
 }
